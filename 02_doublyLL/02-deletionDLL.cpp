@@ -125,7 +125,35 @@ else{
 }
 return head;
 }
+//when element to be deleted is given 
 
+Node* deleteElement(Node *head, int el){
+
+}
+
+void deleteNode(Node* temp){
+    Node* prev= temp->back;
+    Node* front= temp->next;
+
+    if(front==NULL){
+        prev->next= nullptr;
+        temp->back= nullptr;
+        delete temp;
+        return;
+
+    }
+
+    prev->next=front;
+    front->back=prev;
+
+temp->next= temp->back=nullptr;
+
+  delete temp;
+
+
+
+
+}
 int main(){
 
      vector<int> arr = {2,21,4,5};
@@ -135,7 +163,9 @@ int main(){
     //   head= deleteHead(head);
     // head= deleteTail(head);
 
-    head= deleteK(head,1);
+    // head= deleteK(head,1);
+
+deleteNode(head->next->next);
     print(head);
      
     // return 0;
