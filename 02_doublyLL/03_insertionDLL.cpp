@@ -78,6 +78,44 @@ prev->next=List;
 
 return head;
 }
+
+Node* insertionB4k(Node* head ,int k, int val){
+
+if(k==1){
+    return insertionB4Head(head,val);
+}
+
+Node* temp=head;
+int cnt=0;
+while(temp!=NULL){
+    
+    cnt++;
+    
+        if(cnt==k)break;  
+    temp=temp->next;
+    
+    
+}
+Node* prev =temp->back;
+Node* newNode= new Node(val,temp,prev );
+prev->next=newNode;
+temp->back=newNode;
+
+return head;
+}
+
+Node* insertionB4Value(Node* temp,int val){
+   
+
+    Node* prev= temp->back;
+    Node* newNode= new Node(val,temp,prev);
+    prev->next=newNode;
+    temp->back=newNode;
+
+    // retur
+
+    
+}
 int main(){
 
      vector<int> arr = {12,4,5,67,8};
@@ -85,7 +123,11 @@ int main(){
      Node* head= convertArr2DLL(arr);
 
     //  head= insertionB4Head(head, 10);
-     head= insertionB4Tail(head, 10);
+    //  head= insertionB4Tail(head, 10);
+
+        // head= insertionB4k(head,3,29);
+      insertionB4Value(head, 100);
+
      print(head);
      
     return 0;
