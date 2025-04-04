@@ -4,7 +4,7 @@
 #include <cmath> 
 using namespace std;
 
-using namespace std;
+
 
 class Node{
     public: 
@@ -51,19 +51,33 @@ int lengthOfLL(Node *head){
 
 return cnt;
 }
+int checkIfExist(Node* head, int val){
+    Node *temp=head;
+
+   while(temp)
+   {
+    if(temp->data==val) return 1;
+   temp=temp->next;
+
+   }
+return 0;
+}
 int main(){
   
    vector<int> arr={2,51,8,7};
    Node *head =convertArr2LL(arr);
-   Node *temp=head;
+//    Node *temp=head;
 
-   while(temp)
-   {cout<<temp->data<<" ";
-   temp=temp->next;
-   }
+//    while(temp)
 
-   cout<<"Length of linked list is: " << lengthOfLL(head);
-   
+//    {cout<<temp->data<<" "; //code for traversal of the linked list 
+//    temp=temp->next;
+//    }
+
+//    cout<<"Length of linked list is: " << lengthOfLL(head);
+
+// cout<<checkIfExist(head,51);
+
 
 
 }
