@@ -30,14 +30,16 @@
 
 /* Functional Recusrion*/
 
+//FACTORIAL PROGRAM
+
 #include <iostream>
 using namespace std;
 
 int n;
 int f(int n){
-    if(n==0) return 0;
+    if(n==0) return 1;
 
-    return n+f(n-1) ;
+    return n*f(n-1) ;
 
     
 }
